@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emails Anônimos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="" id="forms">
+        <fieldset>
+            <legend><strong>Mande um email anônimo</strong></legend>
+
+            <label for="name"></label>
+            <input type="text" name="name" id="user_name" placeholder="Nome do individuo" required>
+
+            <label for="email"></label>
+
+            <input type="email" name="email" id="user_email" placeholder="Email da pessoa" required>
+
+            <label for="adjetivo" name = "Adjetivo" ></label>
+
+            <input type="text" name="mensagem" id="mensagem" placeholder= "Mensagem"required>
+
+            <div id="enviar">
+                <button type="submit"><strong>Enviar</strong></button>
+            </div>
+            
+            <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+            <script>
+                emailjs.init("XsAqV6LvDep34i9wH");
+
+                document.getElementById("forms").addEventListener("submit",function(event){
+                    event.preventDefault();
+                    const form = document.getElementById("forms");
+                    const data = {
+                        from_name: "Emails Anônimos",
+                        from_link: "http://manoemailsanonimos.surge.sh",
+                        to_email: form.user_email.value,
+                        to_name: form.user_name.value,
+                        message: form.mensagem.value,
+                    };
+
+                    emailjs.send("ManoEmailsAnonimos","Mano.EmailsAnonimos",data).then(
+                        function (response) {
+                            alert("E-mail enviado com sucesso! obrigado por usar meu site");
+                        },
+                        function (error) {
+                            alert("Ocorreu um erro ao enviar o e-mail, tente novamente mais tarde.");
+                        });
+                    });
+            </script>
+        </fieldset>
+    </form>
+</body>
+</html>

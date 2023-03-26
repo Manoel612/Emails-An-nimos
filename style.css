@@ -1,0 +1,70 @@
+*{
+    --color1: #df7093;
+    --color2: #fac3ce;
+    --color3: #c3e5fa;
+    --color4: #ffb5c3;
+    --color5:#7fbfe2;
+    --color6: #509fca;
+    --escuro: black;
+    --claro: white;
+
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--color4);
+}
+legend{
+    background-color: var(--color1);
+    color: var(--claro);
+    padding: 4px 32px;
+    text-align: center;
+    font-size: 24px;
+}
+fieldset{
+    background-color: var(--color3);
+    min-height: 20em;
+    border: 0;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.356) 2px 2px 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+form{
+    max-width: 30em;
+    min-width: 20em;
+    margin: 4em auto;
+}
+#enviar{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+}
+button{
+    border: 0;
+    padding: 8px 32px;
+    color: var(--claro);
+    border-radius: 0;
+    justify-self: center;
+    font-size: 16px;
+    background-color: var(--color1);
+}
+input{
+    background-color: rgba(255, 255, 255, 0.774);
+    border-width: 0;
+    border-radius: 4px; 
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    box-shadow: rgba(0, 0, 0, 0.459) 0px 0px 5px;
+    transition: box-shadow .2s;
+}
+input:focus{
+    outline: 0;
+    box-shadow: none;
+}
